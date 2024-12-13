@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- gsap -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="../../asset/css/style.css" />
+</head>
+
+<body>
+  <section class="sc-closer">
+    <div class="viewport-content">
+      <h2 class="headline-typo">Take a closer look.</h2>
+    </div>
+    <div class="group-product" role="tabpanel">
+      <div class="product-item on" id="product1">
+        <picture>
+          <source srcset="../asset/images/product-viewer/iphone-pro/all/xsmall.jpg" media="(max-width:480px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/all/small.jpg" media="(max-width:734px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/all/medium.jpg" media="(max-width:1068px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/all/large.jpg" media="(max-width:1440px)">
+          <img src="../asset/images/product-viewer/iphone-pro/all/xlarge.jpg" alt="iPhone 16 pro all color">
+        </picture>
+      </div>
+      <div class="product-item" id="product2">
+        <picture>
+          <source srcset="../asset/images/product-viewer/iphone-pro/black/xsmall.jpg" media="(max-width:480px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/black/small.jpg" media="(max-width:734px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/black/medium.jpg" media="(max-width:1068px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/black/large.jpg" media="(max-width:1440px)">
+          <img src="../asset/images/product-viewer/iphone-pro/black/xlarge.jpg" alt="iPhone 16 pro black color">
+        </picture>
+      </div>
+      <div class="product-item" id="product3">
+        <picture>
+          <source srcset="../asset/images/product-viewer/iphone-pro/white/xsmall.jpg" media="(max-width:480px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/white/small.jpg" media="(max-width:734px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/white/medium.jpg" media="(max-width:1068px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/white/large.jpg" media="(max-width:1440px)">
+          <img src="../asset/images/product-viewer/iphone-pro/white/xlarge.jpg" alt="iPhone 16 pro white color">
+        </picture>
+      </div>
+      <div class="product-item" id="product4">
+        <picture>
+          <source srcset="../asset/images/product-viewer/iphone-pro/natural/xsmall.jpg" media="(max-width:480px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/natural/small.jpg" media="(max-width:734px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/natural/medium.jpg" media="(max-width:1068px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/natural/large.jpg" media="(max-width:1440px)">
+          <img src="../asset/images/product-viewer/iphone-pro/natural/xlarge.jpg" alt="iPhone 16 pro natural color">
+        </picture>
+      </div>
+      <div class="product-item" id="product5">
+        <picture>
+          <source srcset="../asset/images/product-viewer/iphone-pro/desert/xsmall.jpg" media="(max-width:480px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/desert/small.jpg" media="(max-width:734px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/desert/medium.jpg" media="(max-width:1068px)">
+          <source srcset="../asset/images/product-viewer/iphone-pro/desert/large.jpg" media="(max-width:1440px)">
+          <img src="../asset/images/product-viewer/iphone-pro/desert/xlarge.jpg" alt="iPhone 16 pro desert color">
+        </picture>
+      </div>
+    </div>
+    <div class="group-nav">
+      <div class="product-name">
+        <span class="on" data-tab-name="#product1">6.9” iPhone 16 Pro Max & 6.3” iPhone 16 Pro in four colors</span>
+        <span data-tab-name="#product2">6.9” iPhone 16 Pro Max & 6.3” iPhone 16 Pro in Black Titanium</span>
+        <span data-tab-name="#product3">6.9” iPhone 16 Pro Max & 6.3” iPhone 16 Pro in White Titanium</span>
+        <span data-tab-name="#product4">6.9” iPhone 16 Pro Max & 6.3” iPhone 16 Pro in Desert Titanium</span>
+        <span data-tab-name="#product5">6.9” iPhone 16 Pro Max & 6.3” iPhone 16 Pro in Natural Titanium</span>
+      </div>
+      <ul class="product-tab-list" role="tablist">
+        <li class="product-tab-item active" data-tab="#product1"></li>
+        <li class="product-tab-item" data-tab="#product2"></li>
+        <li class="product-tab-item" data-tab="#product3"></li>
+        <li class="product-tab-item" data-tab="#product4"></li>
+        <li class="product-tab-item" data-tab="#product5"></li>
+      </ul>
+    </div>
+  </section>
+  <script>
+    $('.sc-closer .product-tab-item').click(function (e) {
+      tabName = $(this).data('tab');
+      $(this).addClass('active').siblings().removeClass('active');
+      $(tabName).addClass('on').siblings().removeClass('on');
+      $('.product-name span').each(function () {
+        if ($(this).data('tab-name') === tabName) {
+          $(this).addClass('on').siblings().removeClass('on');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../asset/css/style.css" />
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- gsap -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      padding-top: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="sc-highlights">
+    <div class="viewport-content">
+      <div class="group-top">
+        <h2 class="headline-typo">Get the highlights.</h2>
+        <button class="btn-film">Watch the film</button>
+      </div>
+    </div>
+    <div class="highlights-swiper swiper">
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide">
+          <p class="caption">
+            The first iPhone built for Apple Intelligence.
+            Personal, private,powerful.
+          </p>
+          <div class="content-box">
+            <video muted>
+              <source src="../asset/video/highlights/highlights-apple-intellegence/xsmall.mp4" type="video/mp4"
+                media="(max-width:480px)">
+              <source src="../asset/video/highlights/highlights-apple-intellegence/small.mp4" type="video/mp4"
+                media="(max-width:734px)">
+              <source src="../asset/video/highlights/highlights-apple-intellegence/medium.mp4" type="video/mp4"
+                media="(max-width:1068px)">
+              <source src="../asset/video/highlights/highlights-apple-intellegence/large.mp4" type="video/mp4"
+                media="(max-width:1440px)">
+              <source src="../asset/video/highlights/highlights-apple-intellegence/xlarge.mp4" type="video/mp4">
+            </video>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <p class="caption">So fast. So fluid. Get a feel for the all-new Camera Control.</p>
+          <div class="content-box">
+            <video muted>
+              <source src="../asset/video/highlights/highlights-camera-control/xsmall.mp4" type="video/mp4"
+                media="(max-width:480px)">
+              <source src="../asset/video/highlights/highlights-camera-control/small.mp4" type="video/mp4"
+                media="(max-width:734px)">
+              <source src="../asset/video/highlights/highlights-camera-control/medium.mp4" type="video/mp4"
+                media="(max-width:1068px)">
+              <source src="../asset/video/highlights/highlights-camera-control/large.mp4" type="video/mp4"
+                media="(max-width:1440px)">
+              <source src="../asset/video/highlights/highlights-camera-control/xlarge.mp4" type="video/mp4">
+            </video>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <p class="caption">4K 120 fps Dolby Vision. 4 studio-quality mics. A Pro studio in your pocket.
+          </p>
+          <div class="content-box">
+            <video muted>
+              <source src="../asset/video/highlights/highlights-dolby/xsmall.mp4" type="video/mp4"
+                media="(max-width:480px)">
+              <source src="../asset/video/highlights/highlights-dolby/small.mp4" type="video/mp4"
+                media="(max-width:734px)">
+              <source src="../asset/video/highlights/highlights-dolby/medium.mp4" type="video/mp4"
+                media="(max-width:1068px)">
+              <source src="../asset/video/highlights/highlights-dolby/large.mp4" type="video/mp4"
+                media="(max-width:1440px)">
+              <source src="../asset/video/highlights/highlights-dolby/xlarge.mp4" type="video/mp4">
+            </video>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <p class="caption">Our thinnest borders yet — for even larger displays. Brilliant.</p>
+          <div class="content-box">
+            <picture>
+              <source srcset="../asset/images/media-card/thin/xsmall.jpg" media="(max-width:480px)">
+              <source srcset="../asset/images/media-card/thin/small.jpg" media="(max-width:734px)">
+              <source srcset="../asset/images/media-card/thin/medium.jpg" media="(max-width:1068px)">
+              <source srcset="../asset/images/media-card/thin/large.jpg" media="(max-width:1440px)">
+              <img src="../asset/images/media-card/thin/xlarge.jpg" alt>
+            </picture>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <p class="caption">All-new A18 Pro chip powers unrivaled intelligence. And unprecedented
+            performance.</p>
+          <div class="content-box">
+            <video muted>
+              <source src="../asset/video/highlights/highlights-chip/xsmall.mp4" type="video/mp4"
+                media="(max-width:480px)">
+              <source src="../asset/video/highlights/highlights-chip/small.mp4" type="video/mp4"
+                media="(max-width:734px)">
+              <source src="../asset/video/highlights/highlights-chip/medium.mp4" type="video/mp4"
+                media="(max-width:1068px)">
+              <source src="../asset/video/highlights/highlights-chip/large.mp4" type="video/mp4"
+                media="(max-width:1440px)">
+              <source src="../asset/video/highlights/highlights-chip/xlarge.mp4" type="video/mp4">
+            </video>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <p class="caption">A huge leap in battery life.<br />Game on.</p>
+          <div class="content-box">
+            <picture>
+              <source srcset="../asset/images/media-card/battery/xsmall.jpg" media="(max-width:480px)">
+              <source srcset="../asset/images/media-card/battery/small.jpg" media="(max-width:734px)">
+              <source srcset="../asset/images/media-card/battery/medium.jpg" media="(max-width:1068px)">
+              <source srcset="../asset/images/media-card/battery/large.jpg" media="(max-width:1440px)">
+              <img src="../asset/images/media-card/battery/xlarge.jpg" alt>
+            </picture>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="group-control on">
+      <button class="btn-controls">
+        <svg class="play" aria-label="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56">
+          <path
+            d="m23.7555 36.6237c.4478 0 .8598-.1343 1.4241-.4568l10.9178-6.3322c.8598-.5016 1.3614-1.021 1.3614-1.8361 0-.8061-.5016-1.3255-1.3614-1.8271l-10.9178-6.3322c-.5643-.3314-.9762-.4657-1.4241-.4657-.9315 0-1.7555.7165-1.7555 1.9435v13.3629c0 1.227.824 1.9435 1.7555 1.9435z">
+          </path>
+        </svg>
+        <svg class="pause active" aria-label="pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56">
+          <path
+            d="m21.7334 36.67h2.5342c1.1483 0 1.7324-.5796 1.7324-1.7193v-13.9015c0-1.12-.5841-1.6898-1.7324-1.7193h-2.5342c-1.1483 0-1.7324.5698-1.7324 1.7193v13.9015c-.0297 1.1396.5544 1.7193 1.7324 1.7193zm9.9992 0h2.5347c1.1485 0 1.7327-.5796 1.7327-1.7193v-13.9015c0-1.12-.5842-1.7193-1.7327-1.7193h-2.5347c-1.1485 0-1.7327.5698-1.7327 1.7193v13.9015c0 1.1396.5545 1.7193 1.7327 1.7193z">
+          </path>
+        </svg>
+        <svg class="replay" aria-label="replay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56">
+          <path
+            d="m36.2448 26.6447c-1.1073 0-2.0052.8978-2.0052 2.0052 0 3.4405-2.7992 6.2397-6.2397 6.2397s-6.2397-2.7992-6.2397-6.2397 2.7992-6.2397 6.2397-6.2397c.0283 0 .0546-.0072.0825-.0083l-1.2839 1.2841c-.7833.7828-.7833 2.0526 0 2.8354.3911.3916.9047.5874 1.4177.5874s1.0266-.1958 1.4177-.5874l4.4406-4.4406c.7833-.7828.7833-2.0526 0-2.8354l-4.657-4.657c-.7823-.7833-2.0531-.7833-2.8354 0-.7833.7828-.7833 2.0526 0 2.8354l.9973.9974c-5.4561.223-9.8295 4.7189-9.8295 10.2287 0 5.6517 4.5983 10.25 10.25 10.25s10.25-4.5983 10.25-10.25c0-1.1073-.8978-2.0052-2.0052-2.0052z">
+          </path>
+        </svg>
+      </button>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+  <script>
+    gsap.set(".sc-highlights .headline-typo,.sc-highlights .btn-film, .highlights-swiper .swiper-slide", { autoAlpha: 0, yPercent: 100, scale: 1.1 });
+    ScrollTrigger.create({
+      trigger: ".sc-highlights",
+      start: "top 80%",
+      end: "bottom bottom",
+      markers: true,
+      onEnter: () => {
+        gsap.to(".sc-highlights .headline-typo", { autoAlpha: 1, yPercent: 0, scale: 1, })  // headline 나타나기
+        gsap.to(".sc-highlights .btn-film", { autoAlpha: 1, yPercent: 0, scale: 1, }, "-=0.25") // img-headline 나타나기
+        gsap.to(".highlights-swiper .swiper-slide", { autoAlpha: 1, yPercent: 0, scale: 1, }, "-=0.25")
+      },
+    })
+    const highlightsSwiper = new Swiper('.highlights-swiper', {
+      slidesPerView: 1.15,
+      spaceBetween: 20,
+      grabCursor: true,
+      centeredSlides: true,
+      pagination: {
+        el: '.sc-highlights .swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+
+      },
+      autoplay: {
+        delay: 7000,
+        disableOnInteraction: false,
+        stopOnLastSlide: true,
+      },
+      loop: false,
+      on: {
+        init: function () {// 처음 실행
+          const activeSlide = this.slides[this.activeIndex];
+          // 비디오 재생
+          const video = activeSlide.querySelector('video');
+          if (video) {
+            video.play();
+          }
+          const activeBullet = document.querySelector('.swiper-pagination-bullet-active');
+          if (activeBullet) {
+            $(activeBullet).css('--width', '100%');
+          }
+        },
+        // 슬라이드 전환이 시작될 때 실행
+        slideChangeTransitionStart: function () {
+          // 모든 슬라이드의 캡션을 초기화 (숨김 상태로 변경)
+          document.querySelectorAll('.highlights-swiper .caption').forEach((caption) => {
+            $(caption).css('--caption-opacity', 0);
+            $(caption).css('--caption-x', '100%');
+          });
+          // 모든 bullet의 프로그레스바 초기화
+          document.querySelectorAll('.swiper-pagination-bullet').forEach((bullet) => {
+            $(bullet).css('--width', 0);
+          });
+
+          // 현재 활성화된 bullet의 프로그레스바 시작
+          const activeBullet = document.querySelector('.swiper-pagination-bullet-active');
+          if (activeBullet) {
+            $(activeBullet).css('--width', '100%');
+          }
+          toggleControlButton('pause');
+        },
+        // 슬라이드 전환이 완료되었을 때 실행
+        slideChangeTransitionEnd: function () {
+          // 현재 활성화된 슬라이드의 캡션에 애니메이션 적용
+          const activeSlide = this.slides[this.activeIndex];
+          const caption = activeSlide.querySelector('.caption');
+          if (caption) {
+            $(caption).css('--caption-opacity', 1);
+            $(caption).css('--caption-x', 0);
+          }
+        },
+        slideChange: function () {
+          // 모든 비디오 일시 정지
+          document.querySelectorAll('.highlights-swiper video').forEach((video) => {
+            video.pause();
+          });
+
+          // 현재 활성화된 슬라이드의 비디오 재생
+          const activeSlide = this.slides[this.activeIndex];
+          const video = activeSlide.querySelector('video');
+          if (video) {
+            video.play();
+          }
+        },
+        reachEnd: function () {//마지막 슬라이드일때
+          setTimeout(() => {
+            toggleControlButton('replay');
+          }, 7000);
+        },
+      }
+    });
+    function toggleControlButton(state) {
+      const playButton = document.querySelector('.sc-highlights .play');
+      const pauseButton = document.querySelector('.sc-highlights .pause');
+      const replayButton = document.querySelector('.sc-highlights .replay');
+
+      playButton.classList.remove('active');
+      pauseButton.classList.remove('active');
+      replayButton.classList.remove('active');
+
+      if (state === 'play') {
+        playButton.classList.add('active');
+      } else if (state === 'pause') {
+        pauseButton.classList.add('active');
+      } else if (state === 'replay') {
+        replayButton.classList.add('active');
+      }
+    }
+    // 버튼 클릭 이벤트 처리
+    document.querySelector('.sc-highlights .btn-controls').addEventListener('click', function () {
+      if (document.querySelector('.sc-highlights .play.active')) {
+        // play 버튼이 활성화된 경우 슬라이드 재생
+        highlightsSwiper.autoplay.start();
+        toggleControlButton('pause');
+      } else if (document.querySelector('.sc-highlights .pause.active')) {
+        // pause 버튼이 활성화된 경우 슬라이드 일시정지
+        highlightsSwiper.autoplay.stop();
+        toggleControlButton('play');
+      } else if (document.querySelector('.sc-highlights .replay.active')) {
+        // replay 버튼이 활성화된 경우 슬라이드 처음부터 재생
+        highlightsSwiper.slideTo(0); // 첫 번째 슬라이드로 이동
+        highlightsSwiper.autoplay.start();
+        toggleControlButton('pause');
+      }
+    });
+  </script>
+</body>
+
+</html>

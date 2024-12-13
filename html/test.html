@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+		}
+
+		.pagination {
+			position: relative;
+			width: 500px;
+			background: #ccc;
+		}
+
+		ul {
+			position: relative;
+			z-index: 1;
+			display: flex;
+			height: 60px;
+		}
+
+		li {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid #000;
+			padding: 0 20px;
+		}
+
+		.curr {
+			position: absolute;
+			top: 0;
+			width: 16px;
+			height: 100%;
+			background: #f00;
+			transition: .3s;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="pagination">
+		<ul>
+			<li class="active">Macro</li>
+			<li>13 mm</li>
+			<li>24 mm</li>
+			<li>28 mm</li>
+			<li>35 mm</li>
+			<li>46 mm</li>
+		</ul>
+		<span class="curr"></span>
+	</div>
+	<script>
+		activeW = $('.pagination .active').outerWidth();
+
+		$('.curr').css(
+			{ width: activeW }
+		);
+
+		$('.pagination li').click(function (e) {
+			$(this).addClass('active').siblings().removeClass('active');
+			leftVal = $(this).position().left;
+			activeW = $('.pagination .active').outerWidth();
+			$('.curr').css(
+				{
+					width: activeW,
+					left: leftVal
+				}
+			);
+		});
+	</script>
+
+
+<style>
+	.slide1{
+		border: 1px solid #000;
+		height: 300px;
+	}
+	.slide1 .swiper-slide{
+		display: flex;
+		align-items: center;
+		justify-content: center;background: #ccc;
+		font-size: 100px;
+	}
+
+	.slide2{
+		border: 10px solid #000;
+	}
+	.slide2 .swiper-slide{
+		width: 200px;
+		padding: 20px;
+		background: #999;
+	}
+	.slide2 .swiper-slide.active{
+		background: #fd0;
+	}
+</style>
+	<div class="swiper slide1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">1</div>
+			<div class="swiper-slide">2</div>
+			<div class="swiper-slide">3</div>
+			<div class="swiper-slide">4</div>
+			<div class="swiper-slide">5</div>
+		</div>
+	</div>
+	<div class="swiper slide2">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">1</div>
+			<div class="swiper-slide">2</div>
+			<div class="swiper-slide">3</div>
+			<div class="swiper-slide">4</div>
+			<div class="swiper-slide">5</div>
+		</div>
+	</div>
+
+	<script>
+		const slide1 = new Swiper('.slide1',{
+			
+		})
+		const slide2 = new Swiper('.slide2',{
+			slidesPerView:'auto',
+			
+		})
+
+		$('.slide2 .swiper-slide').click(function (e) { 
+			e.preventDefault();
+			console.log($(this).index())
+			$(this).addClass('active').siblings().removeClass('active');
+			slide1.slideTo($(this).index())
+			slide2.slideTo($(this).index())
+		});
+	</script>
+</body>
+
+</html>

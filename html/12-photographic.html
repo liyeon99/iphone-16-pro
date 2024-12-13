@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../asset/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <section class="sc-photographic">
+    <h2 class="headline-filter">
+      Choose your<br>
+      <span class="filter" style="filter: url('#glow-1')">Photographic &nbsp;Style.</span><br>
+      Change it up. <br class="t-enter">Change it back.
+    </h2>
+    <div class="group-clip">
+      <div class="sticky-container">
+        <div class="sticky">
+          <div class="clip-wrap">
+            <div class="frame-box" aria-hidden="true">
+              <div class="frame">
+                <div class="top"></div>
+                <div class="bottom"></div>
+              </div>
+              <div class="frame2">
+                <div class="top"></div>
+                <div class="bottom"></div>
+              </div>
+              <div class="frame3">
+                <div class="top"></div>
+                <div class="bottom"></div>
+              </div>
+            </div>
+            <div class="clip-item bw">
+              <img src="../asset/images/photographic/style3.jpg" alt="">
+            </div>
+            <div class="clip-item color">
+              <img src="../asset/images/photographic/style2.jpg" alt="">
+            </div>
+            <div class="clip-item default">
+              <img src="../asset/images/photographic/style1.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="group-photo viewport-content">
+      <div class="typography-area">
+        <p class="typography">
+          Our latest generation of Photographic Styles gives you greater creative flexibility than ever before, so you
+          can <strong>make every photo even more you</strong>. And thanks to advances in our image pipeline, you can now
+          reverse any style, anytime.
+        </p>
+      </div>
+      <div class="choose-area">
+        <div class="typo-box">
+          <div class="box box1">
+            <em class="title">Lock in your look.</em>
+            <p class="typography">
+              We’ve created new styles that let you <strong>dial in your exact desired look with more advanced skin-tone
+                rendering</strong> and set it across your photos.
+            </p>
+          </div>
+          <div class="box box2">
+            <em class="title">Align with your aesthetic.</em>
+            <p class="typography">
+              Our improved image pipeline also enables more creative styles, which allow you to <strong>customize the
+                different moods of a photo</strong> through color.<br><br>
+              With the power of A18 Pro, you can see the style applied in a live preview — like professional color
+              grading in real time.
+            </p>
+          </div>
+          <div class="box box3">
+            <em class="title">Make the most of your megapixels.</em>
+            <p class="typography">
+              Personalize every style even more with the new control pad, which makes it <strong>easy to adjust tone and
+                color simultaneously</strong>. You can also use the slider to adjust the intensity of the specific
+              colors, instead of applying a one-size-fits-all approach.
+            </p>
+          </div>
+        </div>
+        <div class="media-box" aria-hidden="true">
+          <div class="thumb thumb3">
+            <img src="../asset/images/photographic/03.jpg" alt>
+          </div>
+          <div class="thumb thumb2">
+            <img src="../asset/images/photographic/02.jpg" alt>
+          </div>
+          <div class="thumb thumb1">
+            <img src="../asset/images/photographic/01.jpg" alt>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="filter-container" data-component-list="TextGlow">
+    <svg width="1440px" height="300px" viewBox="0 0 1440 300" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <filter id="glow-1" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" data-target-blur="4" stdDeviation="4" result="blur4"></feGaussianBlur>
+          <feGaussianBlur in="SourceGraphic" data-target-blur="19" stdDeviation="19" result="blur19"></feGaussianBlur>
+          <feGaussianBlur in="SourceGraphic" data-target-blur="9" stdDeviation="9" result="blur9"></feGaussianBlur>
+          <feGaussianBlur in="SourceGraphic" data-target-blur="30" stdDeviation="30" result="blur30"></feGaussianBlur>
+          <feColorMatrix in="blur4" result="color-0-blur" type="matrix" values="1 0 0 0 0
+                                              0 0.9803921568627451 0 0 0
+                                              0 0 0.9647058823529412 0 0
+                                              0 0 0 0.8 0"></feColorMatrix>
+          <feOffset in="color-0-blur" result="layer-0-offsetted" dx="0" dy="0" data-target-offset-y="0"></feOffset>
+          <feColorMatrix in="blur19" result="color-1-blur" type="matrix" values="0.8156862745098039 0 0 0 0
+                                              0 0.49411764705882355 0 0 0
+                                              0 0 0.2627450980392157 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-1-blur" result="layer-1-offsetted" dx="0" dy="2" data-target-offset-y="2"></feOffset>
+          <feColorMatrix in="blur9" result="color-2-blur" type="matrix" values="1 0 0 0 0
+                                              0 0.6666666666666666 0 0 0
+                                              0 0 0.36470588235294116 0 0
+                                              0 0 0 0.65 0"></feColorMatrix>
+          <feOffset in="color-2-blur" result="layer-2-offsetted" dx="0" dy="2" data-target-offset-y="2"></feOffset>
+          <feColorMatrix in="blur30" result="color-3-blur" type="matrix" values="1 0 0 0 0
+                                              0 0.611764705882353 0 0 0
+                                              0 0 0.39215686274509803 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-3-blur" result="layer-3-offsetted" dx="0" dy="2" data-target-offset-y="2"></feOffset>
+          <feColorMatrix in="blur30" result="color-4-blur" type="matrix" values="0.4549019607843137 0 0 0 0
+                                              0 0.16470588235294117 0 0 0
+                                              0 0 0 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-4-blur" result="layer-4-offsetted" dx="0" dy="16" data-target-offset-y="16"></feOffset>
+          <feColorMatrix in="blur30" result="color-5-blur" type="matrix" values="0.4235294117647059 0 0 0 0
+                                              0 0.19607843137254902 0 0 0
+                                              0 0 0.11372549019607843 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-5-blur" result="layer-5-offsetted" dx="0" dy="64" data-target-offset-y="64"></feOffset>
+          <feColorMatrix in="blur30" result="color-6-blur" type="matrix" values="0.21176470588235294 0 0 0 0
+                                              0 0.10980392156862745 0 0 0
+                                              0 0 0.07450980392156863 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-6-blur" result="layer-6-offsetted" dx="0" dy="64" data-target-offset-y="64"></feOffset>
+          <feColorMatrix in="blur30" result="color-7-blur" type="matrix" values="0 0 0 0 0
+                                              0 0 0 0 0
+                                              0 0 0 0 0
+                                              0 0 0 0.68 0"></feColorMatrix>
+          <feOffset in="color-7-blur" result="layer-7-offsetted" dx="0" dy="64" data-target-offset-y="64"></feOffset>
+          <feMerge>
+            <feMergeNode in="layer-0-offsetted"></feMergeNode>
+            <feMergeNode in="layer-1-offsetted"></feMergeNode>
+            <feMergeNode in="layer-2-offsetted"></feMergeNode>
+            <feMergeNode in="layer-3-offsetted"></feMergeNode>
+            <feMergeNode in="layer-4-offsetted"></feMergeNode>
+            <feMergeNode in="layer-5-offsetted"></feMergeNode>
+            <feMergeNode in="layer-6-offsetted"></feMergeNode>
+            <feMergeNode in="layer-7-offsetted"></feMergeNode>
+            <feMergeNode in="layer-0-offsetted"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+        <filter id="glow-1-safari" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" x="-50%" y="-50%"
+          width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" data-target-blur="4" stdDeviation="4" result="blur4"></feGaussianBlur>
+          <feGaussianBlur in="SourceGraphic" data-target-blur="19" stdDeviation="19" result="blur19"></feGaussianBlur>
+          <feGaussianBlur in="SourceGraphic" data-target-blur="9" stdDeviation="9" result="blur9"></feGaussianBlur>
+          <feGaussianBlur in="SourceGraphic" data-target-blur="30" stdDeviation="30" result="blur30"></feGaussianBlur>
+          <feColorMatrix in="blur4" result="color-0-blur" type="matrix" values="1 0 0 0 0
+                                              0 0.9803921568627451 0 0 0
+                                              0 0 0.9647058823529412 0 0
+                                              0 0 0 0.8 0"></feColorMatrix>
+          <feOffset in="color-0-blur" result="layer-0-offsetted" dx="0" dy="0" data-target-offset-y="0"></feOffset>
+          <feColorMatrix in="blur19" result="color-1-blur" type="matrix" values="0.8156862745098039 0 0 0 0
+                                              0 0.49411764705882355 0 0 0
+                                              0 0 0.2627450980392157 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-1-blur" result="layer-1-offsetted" dx="0" dy="2" data-target-offset-y="2"></feOffset>
+          <feColorMatrix in="blur9" result="color-2-blur" type="matrix" values="1 0 0 0 0
+                                              0 0.6666666666666666 0 0 0
+                                              0 0 0.36470588235294116 0 0
+                                              0 0 0 0.65 0"></feColorMatrix>
+          <feOffset in="color-2-blur" result="layer-2-offsetted" dx="0" dy="2" data-target-offset-y="2"></feOffset>
+          <feColorMatrix in="blur30" result="color-3-blur" type="matrix" values="1 0 0 0 0
+                                              0 0.611764705882353 0 0 0
+                                              0 0 0.39215686274509803 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-3-blur" result="layer-3-offsetted" dx="0" dy="2" data-target-offset-y="2"></feOffset>
+          <feColorMatrix in="blur30" result="color-4-blur" type="matrix" values="0.4549019607843137 0 0 0 0
+                                              0 0.16470588235294117 0 0 0
+                                              0 0 0 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-4-blur" result="layer-4-offsetted" dx="0" dy="16" data-target-offset-y="16"></feOffset>
+          <feColorMatrix in="blur30" result="color-5-blur" type="matrix" values="0.4235294117647059 0 0 0 0
+                                              0 0.19607843137254902 0 0 0
+                                              0 0 0.11372549019607843 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-5-blur" result="layer-5-offsetted" dx="0" dy="64" data-target-offset-y="64"></feOffset>
+          <feColorMatrix in="blur30" result="color-6-blur" type="matrix" values="0.21176470588235294 0 0 0 0
+                                              0 0.10980392156862745 0 0 0
+                                              0 0 0.07450980392156863 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-6-blur" result="layer-6-offsetted" dx="0" dy="64" data-target-offset-y="64"></feOffset>
+          <feColorMatrix in="blur30" result="color-7-blur" type="matrix" values="0 0 0 0 0
+                                              0 0 0 0 0
+                                              0 0 0 0 0
+                                              0 0 0 0.68 0"></feColorMatrix>
+          <feOffset in="color-7-blur" result="layer-7-offsetted" dx="0" dy="64" data-target-offset-y="64"></feOffset>
+          <feMerge>
+            <feMergeNode in="layer-0-offsetted"></feMergeNode>
+            <feMergeNode in="layer-1-offsetted"></feMergeNode>
+            <feMergeNode in="layer-2-offsetted"></feMergeNode>
+            <feMergeNode in="layer-3-offsetted"></feMergeNode>
+            <feMergeNode in="layer-4-offsetted"></feMergeNode>
+            <feMergeNode in="layer-5-offsetted"></feMergeNode>
+            <feMergeNode in="layer-6-offsetted"></feMergeNode>
+            <feMergeNode in="layer-7-offsetted"></feMergeNode>
+            <feMergeNode in="layer-0-offsetted"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+        <filter id="glow-1-safari-18" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" x="-50%" y="-50%"
+          width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" data-target-blur="4" stdDeviation="4" result="blur4"></feGaussianBlur>
+          <feGaussianBlur in="SourceGraphic" data-target-blur="12" stdDeviation="12" result="blur12"></feGaussianBlur>
+          <feGaussianBlur in="SourceGraphic" data-target-blur="9" stdDeviation="9" result="blur9"></feGaussianBlur>
+          <feGaussianBlur in="SourceGraphic" data-target-blur="12" stdDeviation="12" result="blur12"></feGaussianBlur>
+          <feColorMatrix in="blur4" result="color-0-blur" type="matrix" values="1 0 0 0 0
+                                              0 0.9803921568627451 0 0 0
+                                              0 0 0.9647058823529412 0 0
+                                              0 0 0 0.8 0"></feColorMatrix>
+          <feOffset in="color-0-blur" result="layer-0-offsetted" dx="0" dy="0" data-target-offset-y="0"></feOffset>
+          <feColorMatrix in="blur12" result="color-1-blur" type="matrix" values="0.8156862745098039 0 0 0 0
+                                              0 0.49411764705882355 0 0 0
+                                              0 0 0.2627450980392157 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-1-blur" result="layer-1-offsetted" dx="0" dy="2" data-target-offset-y="2"></feOffset>
+          <feColorMatrix in="blur9" result="color-2-blur" type="matrix" values="1 0 0 0 0
+                                              0 0.6666666666666666 0 0 0
+                                              0 0 0.36470588235294116 0 0
+                                              0 0 0 0.65 0"></feColorMatrix>
+          <feOffset in="color-2-blur" result="layer-2-offsetted" dx="0" dy="2" data-target-offset-y="2"></feOffset>
+          <feColorMatrix in="blur12" result="color-3-blur" type="matrix" values="1 0 0 0 0
+                                              0 0.611764705882353 0 0 0
+                                              0 0 0.39215686274509803 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-3-blur" result="layer-3-offsetted" dx="0" dy="2" data-target-offset-y="2"></feOffset>
+          <feColorMatrix in="blur12" result="color-4-blur" type="matrix" values="0.4549019607843137 0 0 0 0
+                                              0 0.16470588235294117 0 0 0
+                                              0 0 0 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-4-blur" result="layer-4-offsetted" dx="0" dy="16" data-target-offset-y="16"></feOffset>
+          <feColorMatrix in="blur12" result="color-5-blur" type="matrix" values="0.4235294117647059 0 0 0 0
+                                              0 0.19607843137254902 0 0 0
+                                              0 0 0.11372549019607843 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-5-blur" result="layer-5-offsetted" dx="0" dy="20" data-target-offset-y="20"></feOffset>
+          <feColorMatrix in="blur12" result="color-6-blur" type="matrix" values="0.21176470588235294 0 0 0 0
+                                              0 0.10980392156862745 0 0 0
+                                              0 0 0.07450980392156863 0 0
+                                              0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-6-blur" result="layer-6-offsetted" dx="0" dy="20" data-target-offset-y="20"></feOffset>
+          <feColorMatrix in="blur12" result="color-7-blur" type="matrix" values="0 0 0 0 0
+                                              0 0 0 0 0
+                                              0 0 0 0 0
+                                              0 0 0 0.68 0"></feColorMatrix>
+          <feOffset in="color-7-blur" result="layer-7-offsetted" dx="0" dy="20" data-target-offset-y="20"></feOffset>
+          <feMerge>
+            <feMergeNode in="layer-0-offsetted"></feMergeNode>
+            <feMergeNode in="layer-1-offsetted"></feMergeNode>
+            <feMergeNode in="layer-2-offsetted"></feMergeNode>
+            <feMergeNode in="layer-3-offsetted"></feMergeNode>
+            <feMergeNode in="layer-4-offsetted"></feMergeNode>
+            <feMergeNode in="layer-5-offsetted"></feMergeNode>
+            <feMergeNode in="layer-6-offsetted"></feMergeNode>
+            <feMergeNode in="layer-7-offsetted"></feMergeNode>
+            <feMergeNode in="layer-0-offsetted"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+        <filter id="glow-1-ios" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" x="-50%" y="-50%"
+          width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" data-target-blur="4" stdDeviation="4" result="blur4"></feGaussianBlur>
+          <feGaussianBlur in="SourceGraphic" data-target-blur="12" stdDeviation="12" result="blur12"></feGaussianBlur>
+          <feGaussianBlur in="SourceGraphic" data-target-blur="9" stdDeviation="9" result="blur9"></feGaussianBlur>
+          <feGaussianBlur in="SourceGraphic" data-target-blur="12" stdDeviation="12" result="blur12"></feGaussianBlur>
+          <feColorMatrix in="blur4" result="color-0-blur" type="matrix" values="1 0 0 0 0
+                                            0 0.9803921568627451 0 0 0
+                                            0 0 0.9647058823529412 0 0
+                                            0 0 0 0.8 0"></feColorMatrix>
+          <feOffset in="color-0-blur" result="layer-0-offsetted" dx="0" dy="0" data-target-offset-y="0"></feOffset>
+          <feColorMatrix in="blur12" result="color-1-blur" type="matrix" values="0.8156862745098039 0 0 0 0
+                                            0 0.49411764705882355 0 0 0
+                                            0 0 0.2627450980392157 0 0
+                                            0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-1-blur" result="layer-1-offsetted" dx="0" dy="2" data-target-offset-y="2"></feOffset>
+          <feColorMatrix in="blur9" result="color-2-blur" type="matrix" values="1 0 0 0 0
+                                            0 0.6666666666666666 0 0 0
+                                            0 0 0.36470588235294116 0 0
+                                            0 0 0 0.65 0"></feColorMatrix>
+          <feOffset in="color-2-blur" result="layer-2-offsetted" dx="0" dy="2" data-target-offset-y="2"></feOffset>
+          <feColorMatrix in="blur12" result="color-3-blur" type="matrix" values="1 0 0 0 0
+                                            0 0.611764705882353 0 0 0
+                                            0 0 0.39215686274509803 0 0
+                                            0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-3-blur" result="layer-3-offsetted" dx="0" dy="2" data-target-offset-y="2"></feOffset>
+          <feColorMatrix in="blur12" result="color-4-blur" type="matrix" values="0.4549019607843137 0 0 0 0
+                                            0 0.16470588235294117 0 0 0
+                                            0 0 0 0 0
+                                            0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-4-blur" result="layer-4-offsetted" dx="0" dy="12" data-target-offset-y="12"></feOffset>
+          <feColorMatrix in="blur12" result="color-5-blur" type="matrix" values="0.4235294117647059 0 0 0 0
+                                            0 0.19607843137254902 0 0 0
+                                            0 0 0.11372549019607843 0 0
+                                            0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-5-blur" result="layer-5-offsetted" dx="0" dy="12" data-target-offset-y="12"></feOffset>
+          <feColorMatrix in="blur12" result="color-6-blur" type="matrix" values="0.21176470588235294 0 0 0 0
+                                            0 0.10980392156862745 0 0 0
+                                            0 0 0.07450980392156863 0 0
+                                            0 0 0 1 0"></feColorMatrix>
+          <feOffset in="color-6-blur" result="layer-6-offsetted" dx="0" dy="12" data-target-offset-y="12"></feOffset>
+          <feColorMatrix in="blur12" result="color-7-blur" type="matrix" values="0 0 0 0 0
+                                            0 0 0 0 0
+                                            0 0 0 0 0
+                                            0 0 0 0.68 0"></feColorMatrix>
+          <feOffset in="color-7-blur" result="layer-7-offsetted" dx="0" dy="12" data-target-offset-y="12"></feOffset>
+          <feMerge>
+            <feMergeNode in="layer-0-offsetted"></feMergeNode>
+            <feMergeNode in="layer-1-offsetted"></feMergeNode>
+            <feMergeNode in="layer-2-offsetted"></feMergeNode>
+            <feMergeNode in="layer-3-offsetted"></feMergeNode>
+            <feMergeNode in="layer-4-offsetted"></feMergeNode>
+            <feMergeNode in="layer-5-offsetted"></feMergeNode>
+            <feMergeNode in="layer-6-offsetted"></feMergeNode>
+            <feMergeNode in="layer-7-offsetted"></feMergeNode>
+            <feMergeNode in="layer-0-offsetted"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+  </div>
+  <script>
+    const photographic = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".group-clip",
+        start: "top top",
+        end: "bottom bottom",
+        markers: false,
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
+    });
+
+
+    photographic
+      .to(".group-clip .clip-item.default", {
+        '--clip-progress': '100%',
+      })
+      .to(".group-clip .frame-box", {
+        xPercent: -100,
+      }, "<")
+      .to(".group-clip .clip-item.color", {
+        '--clip-progress': '100%',
+      })
+      .to(".group-clip .frame-box", {
+        xPercent: -200,
+      }, "<")
+      .to(".group-clip", {
+        width: '90%',
+      })
+
+    const photographicFrame = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".sc-photographic .choose-area",
+        start: "top top",
+        end: "bottom bottom",
+        markers: false,
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
+    });
+    gsap.set(".choose-area .box2",{autoAlpha:0})
+    gsap.set(".choose-area .box3",{autoAlpha:0})
+    photographicFrame
+    .to(".choose-area .thumb1", {
+      autoAlpha: 0,
+    })
+    .to(".choose-area .box2",{autoAlpha:1}, )
+    .to(".choose-area .thumb1", {
+      autoAlpha: 0,
+    })
+    .to(".choose-area .thumb2", {
+      autoAlpha: 0,
+    })
+    .to(".choose-area .box3",{autoAlpha:1},"<" )
+
+  </script>
+</body>
+
+</html>

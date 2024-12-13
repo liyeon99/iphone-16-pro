@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../asset/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <style>
+    .sc-dolby {
+      margin-top: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="sc-dolby">
+    <h2 class="blind">dolby</h2>
+    <div class="group-horse">
+      <div class="horse-area">
+        <div class="sticky-container">
+          <div class="sticky">
+            <h3 class="headline">
+              4K 120 fps Dolby Vision.<br>
+              Cinemasterful.
+            </h3>
+            <div class="bg-wrap">
+              <img src="../asset/images/video-frame.png" alt class="frame">
+              <video src="../asset/video/video-hero/xlarge.mp4" autoplay muted class="item"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="viewport-content">
+        <p class="figcaption">A herd of Icelandic horses, captured in stunning 4K 120 fps Dolby Vision</p>
+        <div class="typography-area">
+          <p class="typography">
+            iPhone 16 Pro takes video capture to a whole new level with <strong>4K 120 fps Dolby Vision</strong> — our
+            highest resolution and frame rate combo yet. Enabled by the new 48MP Fusion camera with second-generation
+            quad-pixel sensor and our powerful A18 Pro chip, iPhone 16 Pro lets you record 4K 120 fps Dolby Vision in
+            video mode or slo-mo.
+          </p>
+          <p class="typography large">
+            <strong>Highest-quality video</strong> in a smartphone
+          </p>
+          <p class="typography">
+            And now you can <strong>adjust the playback speed after capture</strong> in the redesigned Photos app,
+            giving you greater editing capabilities. To add a dreamy quality to your shot, try out the new half-speed
+            option. Or for a cinematic effect, slow it right down to 24 fps playback.
+          </p>
+          <p class="typography">
+            iPhone 16 Pro also provides <strong>a big leap in audio performance</strong> with four studio-quality mics
+            for higher-quality recording. They provide a lower noise floor so you get more true-to-life sounds. New
+            Spatial Audio capture makes your videos sound more immersive when listening with AirPods. And thanks to wind
+            noise reduction, the audio quality is even clearer.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="group-audio">
+      <div class="viewport-content">
+        <h3 class="headline">
+          Audio Mix.<br>
+          Make your voice heard.
+        </h3>
+        <div class="typography-area">
+          <p class="typography">
+            Powered by advanced intelligence and Spatial Audio capture, Audio Mix lets you <strong>adjust the way voices
+              sound in your videos</strong> using three different voice options. Want to decrease background sound? Or
+            just focus on the voices that are in frame? Simply select the mix and adjust intensity to get the sound you
+            want after video capture.
+          </p>
+        </div>
+        <div class="mix-area">
+          <div class="thumb"><img src="../asset/images/audio-mix.jpg" alt></div>
+          <dl class="cine-list">
+            <div class="cine-item"> 
+              <dt>In-frame</dt>
+              <dd>Only captures the voices of the people on camera, even if people off-camera are talking during the recording.</dd>
+            </div>
+            <div class="cine-item">
+              <dt>Studio</dt>
+              <dd>Makes voices sound like you’re recording in a professional studio equipped with sound-dampening walls. Great for vloggers or podcasters because the recording will sound like the mic is close to the subject’s mouth, even if it’s a few feet away.</dd>
+            </div>
+            <div class="cine-item">
+              <dt>Cinematic</dt>
+              <dd>Captures all of the voices around you and consolidates them toward the front of the screen — just like sound is formatted for the movies.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="group-shot">
+      <h3 class="headline">Shot on iPhone 16 Pro.</h3>
+      <div class="typography-area">
+        <p class="typography">
+          Go behind the scenes of <strong>The Weeknd’s groundbreaking music video</strong> to learn how the powerful camera features on iPhone 16 Pro deliver more creative freedom and flexibility than ever before. The “Dancing in the Flames” cinematographer Erik Henriksson films the video in dreamlike slow motion using 4K 120 fps Dolby Vision on iPhone 16 Pro. Thanks to Camera Control, he could make technical decisions by simply sliding a finger to adjust camera functions like exposure or focal length — all without missing a beat.
+        </p>
+      </div>
+      <div class="video-area">
+        <!-- <video poster="../asset/images/video-audio/shot.jpg" controls>/video> -->
+        <iframe src="https://www.youtube.com/embed/rZ2ZeR63-ME?si=tU5mdoATEGxAzNJD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <button class="btn-plus">
+      Nerd out on Pro video
+    </button>
+  </section>
+
+  <script>
+    const horseCover = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".horse-area",
+        start: "top top",
+        end: "bottom bottom",
+        markers: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    horseCover
+      .to(".horse-area .bg-wrap", {
+        '--opacity': 0
+      })
+      .to(".horse-area .headline", {
+        yPercent: -200,
+        autoAlpha: 0
+      }, "<")
+      .to(".horse-area .bg-wrap", {
+        scale: 1,
+      });
+  </script>
+</body>
+
+</html>

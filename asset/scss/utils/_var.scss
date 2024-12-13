@@ -1,0 +1,33 @@
+$localnav-keyline-color: rgba(255, 255, 255, 0.24);
+$sk-body-text-color: rgb(245, 245, 247);
+$sk-glyph-blue: rgb(41, 151, 255);
+$sk-body-text-color: rgb(245, 245, 247);
+$r-globalnav-color: rgba(255, 255, 255, .8);
+$r-globalnav-color-hover: #FFFFFF;
+$sk-body-background-color: rgb(0, 0, 0);
+$sk-headline-text-color: rgb(245, 245, 247);
+$sk-body-link-color: rgb(41, 151, 255);
+
+:root {
+  --global-section-background-color-alt: rgb(245,245,247);
+  --global-section-background-color-alt-dark: rgb(29,29,31);
+  --global-section-padding: 160px;
+  --global-section-aap-padding: 216px
+}
+
+@media(max-width: 1068px) {
+  :root {
+      --global-section-padding:128px;
+      --global-section-aap-padding:206px;
+  }
+}
+
+@media(max-width: 734px) {
+  :root {
+      --global-section-padding:96px;
+      --global-section-aap-padding:196px;
+  }
+}
+
+
+

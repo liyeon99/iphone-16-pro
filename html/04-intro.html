@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../asset/css/style.css" />
+  <!-- gsap -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+  <main>
+    <section class="sc-intro">
+      <div class="group-intro">
+        <h2 class="headline">iPhone 16 Pro</h2>
+        <picture class="img-headline">
+          <source srcset="../asset/images/welcome/headline_xsmall_2x.png" media="(max-width:480px)">
+          <source srcset="../asset/images/welcome/headline_small_2x.png" media="(max-width:734px)">
+          <source srcset="../asset/images/welcome/headline_medium_2x.png" media="(max-width:1068px)">
+          <source srcset="../asset/images/welcome/headline_large_2x.png" media="(max-width:1440px)">
+          <img src="../asset/images/welcome/headline.png" alt="Hello, Apple Intelligence.">
+        </picture>
+        <div class="media-area">
+          <div class="video-box">
+            <video muted autoplay id="introVideo">
+              <source src="../asset/video/intro/xsmall.mp4" type="video/mp4" media="(max-width:480px)">
+              <source src="../asset/video/intro/small.mp4" type="video/mp4" media="(max-width:734px)">
+              <source src="../asset/video/intro/medium.mp4" type="video/mp4" media="(max-width:1068px)">
+              <source src="../asset/video/intro/large.mp4" type="video/mp4" media="(max-width:1440px)">
+              <source src="../asset/video/intro/xlarge.mp4" type="video/mp4">
+            </video>
+          </div>
+          <picture class="img-box">
+            <source srcset="../asset/images/welcome/intro_xsmall_2x.jpg" media="(max-width:480px)">
+            <source srcset="../asset/images/welcome/intro_small_2x.jpg" media="(max-width:734px)">
+            <source srcset="../asset/images/welcome/intro_medium_2x.jpg" media="(max-width:1068px)">
+            <source srcset="../asset/images/welcome/intro_large_2x.jpg" media="(max-width:1440px)">
+            <img src="../asset/images/welcome/intro.jpg" alt="iPhone 16 Pro">
+          </picture>
+        </div>
+        <div class="price-area">
+          <div class="btn-box">
+            <a href="#" class="btn btn-price">Buy</a>
+          </div>
+          <div class="price-box">
+            <p class="product">
+              From $999 or or $41.62/mo.&nbsp;for&nbsp;24&nbsp;mo.</span>
+              <sup class="footnote footnote-number">
+                <a href="#footnote-2" aria-label="Footnote 1" data-modal-close="">1</a>
+              </sup>
+            </p>
+            <p class="secondary">Apple&nbsp;Intelligence coming this fall
+              <sup class="footnote footnote-number">
+                <a href="#footnote-3" aria-label="Footnote 2">2</a>
+              </sup>
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    gsap.defaults({
+      ease: "none",
+    });
+    let mm = gsap.matchMedia();
+    const intro = gsap.timeline({});
+    const introVideo = document.querySelector('#introVideo');
+    // mm.add("(max-width: 480px)", () => {})
+    
+    gsap.set(".sc-intro .headline, .sc-intro .img-headline, .sc-intro .price-area", { autoAlpha: 0, scale: 1.1 });
+    introVideo.addEventListener('ended', () => {
+      intro
+      .to(".sc-intro .video-box", { autoAlpha: 0 }) // 동영상 숨기기
+      .to(".sc-intro .headline", { autoAlpha: 1, scale: 1, })  // headline 나타나기
+      .to(".sc-intro .img-headline", { autoAlpha: 1, scale: 1, }, "-=0.25") // img-headline 나타나기
+      .to(".sc-intro .price-area", { autoAlpha: 1, scale: 1, }, "-=0.25");  // price-area 나타나기
+    });
+    //intro
+    
+  </script>
+</body>
+
+</html>

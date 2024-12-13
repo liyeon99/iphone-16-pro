@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../asset/css/style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <style>
+    body {
+      padding-top: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="sc-buy">
+    <div class="viewport-content">
+      <div class="group-top">
+        <h2 class="headline-typo">Why Apple is the best<br>place to buy iPhone.</h2>
+        <a href="#" class="link-more">Shop iPhone</a>
+      </div>
+    </div>
+    <div class="group-swiper">
+      <div class="swiper-area">
+        <div class="iphone-swiper swiper">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+              <button type="button">
+                <i class="icon" aria-hidden="true">
+                  <img src="../asset/images/icons/buy/trade.png" alt>
+                </i>
+                <h3>
+                  Save with<br>Apple Trade In.
+                </h3>
+                <p>
+                  Get $180–$650 in credit toward iPhone 16 or iPhone 16 Pro when you trade in iPhone 12 or higher.
+                </p>
+              </button>
+            </li>
+            <li class="swiper-slide">
+              <button type="button">
+                <i class="icon" aria-hidden="true">
+                  <img src="../asset/images/icons/buy/card.png" alt>
+                </i>
+                <h3>
+                  Pay over time, <br>interest‑free.
+                </h3>
+                <p>
+                  When you choose to check out with Apple Card Monthly Installments.
+                </p>
+              </button>
+            </li>
+            <li class="swiper-slide">
+              <button type="button">
+                <i class="icon" aria-hidden="true">
+                  <img src="../asset/images/icons/buy/carrier.png" alt>
+                </i>
+                <h3>
+                  Apple. Your one-stop shop for incredible carrier deals.
+                </h3>
+                <p>
+                  Get up to $1000 in credit on a new iPhone with AT&T, Boost Mobile, T‑Mobile, or Verizon. Trade‑in may be required.18
+                </p>
+              </button>
+            </li>
+            <li class="swiper-slide">
+              <button type="button">
+                <i class="icon" aria-hidden="true">
+                  <img src="../asset/images/icons/buy/delivery.png" alt>
+                </i>
+                <h3>
+                  Get flexible delivery and easy pickup.
+                </h3>
+                <p>
+                  Choose from two‑hour delivery from an Apple Store, free delivery, or easy pickup options.
+                </p>
+              </button>
+            </li>
+            <li class="swiper-slide">
+              <button type="button">
+                <i class="icon" aria-hidden="true">
+                  <img src="../asset/images/icons/buy/specialist.png" alt>
+                </i>
+                <h3>
+                  Shop live with a Specialist.
+                </h3>
+                <p>
+                  Let us guide you live over video and answer all of your questions.
+                </p>
+              </button>
+            </li>
+            <li class="swiper-slide">
+              <button type="button">
+                <i class="icon" aria-hidden="true">
+                  <img src="../asset/images/icons/buy/person.png" alt>
+                </i>
+                <h3>
+                  Meet your new iPhone with Personal Setup.
+                </h3>
+                <p>
+                  Jump into online sessions with a Specialist to set up your iPhone and discover new features.
+                </p>
+              </button>
+            </li>
+            <li class="swiper-slide">
+              <button type="button">
+                <i class="icon" aria-hidden="true">
+                  <img src="../asset/images/icons/buy/aap.png" alt>
+                </i>
+                <h3>
+                  Explore a shopping experience designed around you.
+                </h3>
+                <p>
+                  Use the Apple Store app to get a more personal way to shop.
+                </p>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="swiper-navigation">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const iphoneSwiper = new Swiper('.iphone-swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      grabCursor: true,
+      centeredSlides: true,
+      navigation: {
+        nextEl: '.sc-buy .swiper-button-next',
+        prevEl: '.sc-buy .swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+</html>

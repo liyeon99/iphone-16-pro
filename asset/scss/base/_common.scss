@@ -1,0 +1,492 @@
+// common의 용도
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+}
+
+body {
+  transition: opacity .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+body.blur {
+  overflow: hidden;
+  opacity: 1;
+  &::after {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 1;
+    content: '';
+    background:rgba(36, 36, 36, 0.6);
+    backdrop-filter: blur(20px);
+    z-index: 20;
+  }
+}
+
+body.dimmed {
+  overflow: hidden;
+  opacity: 1;
+}
+
+body.dimmed::after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .8);
+  opacity: 1;
+  content: '';
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sc-titanium,
+.sc-camera {
+  .viewport-content .typography-area {
+    display: flex;
+    margin: 15vh 15vw;
+    gap: 15vw;
+
+    @include resD {
+      margin: 15vh 6vw;
+    }
+
+    @include resT {
+      margin: 7.41vh 4.8vw;
+      gap: 11vw;
+    }
+
+    @include resM {
+      margin: 7vh 8vw;
+      flex-direction: column;
+      gap: 8vw;
+    }
+
+    .typography {
+      flex: 1;
+    }
+  }
+
+}
+
+.sc-titanium,
+.sc-camera,
+.sc-ios18,
+.sc-buy {
+  .swiper-area {
+    position: relative;
+    padding-bottom: 90px;
+
+    @include resT {
+      padding-bottom: 70px;
+    }
+
+    @include resM {
+      padding-bottom: 60px;
+    }
+
+    .swiper {
+      .swiper-wrapper {
+        margin-left: -25%;
+
+        @include resT {
+          margin-left: -15%;
+        }
+
+        .swiper-slide {
+          width: 550px;
+
+          @include resD {
+            width: 520px;
+          }
+
+          @include resT {
+            width: 462px;
+          }
+
+          @include resM {
+            width: 295px;
+          }
+
+          figure {
+            .thumb {
+              width: 100%;
+              aspect-ratio: 1/1;
+              border-radius: 18px;
+              overflow: hidden;
+            }
+
+            figcaption {
+              font-size: 17px;
+              line-height: 1.4705882353;
+              font-weight: 600;
+              letter-spacing: -0.022em;
+              padding: 32px 5px 20px 34px;
+              width: 70%;
+              color: #86868b;
+
+              strong {
+                color: #fff;
+              }
+
+              @include resM {
+                width: 80%;
+                font-size: 14px;
+                padding: 20px 5px 0px 34px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .swiper-navigation {
+      position: absolute;
+      right: 6%;
+      bottom: 0;
+      width: 90px;
+      height: auto;
+      display: flex;
+      gap: 15px;
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        position: static;
+        width: 36px;
+        height: 36px;
+        background-color: rgba(66, 66, 69, 0.72);
+        border-radius: 100%;
+      }
+
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 12px;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+}
+
+.typography-area,
+.typo-box {
+  font-size: 21px;
+  line-height: 1.4;
+  letter-spacing: .011em;
+
+  @include resT {
+    font-size: 17px;
+  }
+
+  @include resM {
+    font-size: 19px;
+    line-height: 1.2;
+  }
+
+  .typography {
+    font-weight: 600;
+    color: rgb(134, 134, 139);
+
+    strong {
+      color: rgb(245, 245, 247);
+    }
+  }
+
+  .typography.large {
+    font-size: 40px;
+  }
+
+  @include resT {
+    .typography.large {
+      font-size: 24px;
+    }
+  }
+}
+
+.viewport-content {
+  margin: 0 auto;
+  width: 87.5%;
+  max-width: 1680px;
+}
+
+
+.sc-dolby,
+.sc-a18 {
+  .headline {
+    font-size: 64px;
+    line-height: 1.125;
+    font-weight: 600;
+    text-align: center;
+
+    @include resT {
+      font-size: 40px;
+    }
+
+    @include resM {
+      font-size: 32px;
+      width: 83.888%;
+    }
+  }
+}
+
+.headline-typo {
+  font-size: 56px;
+  line-height: 1.07143;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: $sk-body-text-color;
+  transition: font-size .3s;
+  padding-bottom: 80px;
+
+  &.large {
+    font-size: 80px;
+
+    @include resT {
+      font-size: 64px;
+    }
+
+    @include resM {
+      font-size: 40px;
+    }
+  }
+
+  @include resT {
+    font-size: 48px;
+    padding-bottom: 64px;
+  }
+
+  @include resM {
+    font-size: 32px;
+    padding-bottom: 48px;
+  }
+
+  @include resSM {
+    font-size: 28px;
+  }
+}
+
+.headline-filter {
+  text-align: center;
+  color: #c8c2bd;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include resT {
+    font-size: 64px;
+  }
+
+  @include resM {
+    font-size: 40px;
+  }
+
+  .mt-filter{
+    margin-top: -80px;
+    @include resSM {
+      margin-top: -40px;
+    }
+  }
+  .filter {
+    padding: 80px 0;
+    color: #fff;
+    margin-top: -80px;
+    @include resSM {
+      padding: 40px 0;
+      margin-top: -40px;
+    }
+  }
+}
+
+.t-enter {
+  display: none;
+
+  @include resD {
+    display: block;
+  }
+}
+
+.m-enter {
+  display: none;
+
+  @include resM {
+    display: block;
+  }
+}
+
+.shadow {
+  background-image: linear-gradient(0deg, rgb(255, 255, 255), #757575);
+  background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+}
+
+.filter-container {
+  display: none;
+}
+
+.gradient {
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, #131313 50%);
+}
+
+.radius-gradient {
+  width: 75%;
+  max-width: 1400px;
+  border-radius: 18px;
+  background-image: linear-gradient(180deg, #0e0e0e 30%, rgba(14, 14, 14, 0) 80%);
+  padding: 72px 0 0 7.33333%;
+
+  @include resD {
+    width: 88%;
+  }
+
+  @include resT {
+    padding-top: 50px;
+  }
+
+  @include resM {
+    padding-top: 40px;
+  }
+
+  @include resSM {
+    padding-right: 7.33333%;
+  }
+}
+
+.select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 24px;
+
+  @include resM {
+    font-size: 21px;
+  }
+
+  @include resSM {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .select-box {
+    width: fit-content;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 40%;
+      right: 20px;
+      width: 6px;
+      height: 11px;
+      rotate: (90deg);
+      background-color: #fff;
+      mask-image: url(../images/icons/icon_arrow.svg);
+      mask-repeat: no-repeat;
+      pointer-events: none;
+    }
+
+    @include resSM {
+      width: 100%;
+    }
+  }
+
+  .select-label {
+    line-height: 1.1;
+  }
+
+  .select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 22px;
+    height: 42px;
+    border-radius: 10em;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #86868b;
+    appearance: none;
+    text-overflow: ellipsis;
+    cursor: pointer;
+
+    option {
+      color: #000;
+    }
+
+    @include resSM {
+      width: 100%;
+    }
+
+    &:focus {
+      border-color: $sk-glyph-blue;
+    }
+
+  }
+}
+
+.group-compare {
+  margin-top: 128px;
+  @include column-flexbox;
+
+  @include resT {
+    margin-top: 80px;
+  }
+
+  .option-wrap {
+    margin-top: 56px;
+
+    .option-item {
+      display: none;
+
+      &.on {
+        display: flex;
+      }
+
+      color: #86868b;
+      font-size: 17px;
+      line-height: 1.2353641176;
+      gap: 20%;
+
+      @include resT {
+        gap: 35%;
+      }
+
+      @include resM {
+        flex-direction: column;
+        gap: 48px;
+      }
+
+      p {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 5px;
+        font-weight: 600;
+
+        strong {
+          font-size: 28px;
+          background-image: linear-gradient(270deg, #f5e3d9 40%, #fdc9ae);
+          background-clip: text;
+          -webkit-text-fill-color: rgba(0, 0, 0, 0);
+
+          @include resT {}
+        }
+      }
+    }
+  }
+}

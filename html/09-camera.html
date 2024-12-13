@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../asset/css/style.css" />
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+  <section class="sc-camera">
+    <h2 class="headline-filter">
+      Take total<br />
+      <span class="filter" style="filter: url('#glow-1')">Camera Control.</span>
+    </h2>
+    <div class="group-media">
+      <div class="video-area">
+        <video muted autoplay src="../asset/video/camera-control-hero.mp4"></video>
+      </div>
+    </div>
+    <div class="viewport-content">
+      <div class="typography-area">
+        <p class="typography">
+          Now you can take the perfect photo or video in record time. Camera Control gives you an <strong>easier way to
+            quickly access camera tools</strong>. Simply slide your finger to adjust camera functions like exposure or
+          depth of field, and toggle through each lens or use digital zoom to frame your shot — just how you like it.
+        </p>
+        <p class="typography">
+          Later this year, Camera Control will introduce a two-stage shutter that lets you <strong>automatically lock
+            focus and exposure</strong> with a light press — so you can reframe your shot without losing focus on your
+          subject.
+          <a href="#" class="link-more">How to use Camera Control</a>
+        </p>
+      </div>
+    </div>
+    <div class="swiper-area">
+      <div class="camera-swiper swiper">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide">
+            <figure>
+              <div class="thumb">
+                <video src="../asset/video/instant/instant-capture.mp4"></video>
+              </div>
+              <figcaption>
+                Click to launch the Camera app.<br>
+                Click again to<strong> instantly take a photo.</strong>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="swiper-slide">
+            <figure>
+              <div class="thumb">
+                <video src="../asset/video/instant/record-video.mp4"></video>
+              </div>
+              <figcaption>
+                Click and hold to <strong>start recording video.</strong>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="swiper-slide">
+            <figure>
+              <div class="thumb">
+                <video src="../asset/video/instant/frame.mp4"></video>
+              </div>
+              <figcaption>
+                A light press <strong>opens controls like zoom.</strong>
+            </figure>
+          </li>
+          <li class="swiper-slide">
+            <figure>
+              <div class="thumb">
+                <video src="../asset/video/instant/camera-settings.mp4"></video>
+              </div>
+              <figcaption>
+                With a double light press, you can <strong>select another camera setting.</strong> Then slide to adjust
+                that setting.
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+      <div class="swiper-navigation">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    <button class="btn-plus">
+      Go deeper on Camera Control
+    </button>
+  </section>
+
+  <script>
+
+    const cameraSwiper = new Swiper('.camera-swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      grabCursor: true,
+      centeredSlides: true,
+      navigation: {
+        nextEl: '.sc-camera .swiper-button-next',
+        prevEl: '.sc-camera .swiper-button-prev',
+      },
+      on: {
+        slideChange: function () {
+          // 모든 비디오 멈춤
+          document.querySelectorAll('.camera-swiper video').forEach((video) => {
+            video.pause();
+            video.currentTime = 0; 
+          });
+
+          // 현재 슬라이드의 비디오 재생
+          const activeSlide = this.slides[this.activeIndex];
+          const video = activeSlide.querySelector('video');
+          if (video) {
+            video.play();
+          }
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

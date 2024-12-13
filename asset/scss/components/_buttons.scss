@@ -1,0 +1,141 @@
+.btn{
+  @include flexbox;
+  $sk-button-background: #0071e3;
+  $sk-button-background-hover: #0076DF;
+  $sk-button-background-active: #006EDB;
+  $sk-button-color: rgb(255, 255, 255);
+  background: $sk-button-background;
+  color: $sk-button-color;
+  border-radius: 980px;
+  padding: 0 13px;
+  min-width: 23px;
+  height: 24px;
+  font-size: .65rem;
+  &:hover{
+    background: $sk-button-background-active;
+  }
+}
+
+.btn-arrow{
+  width: 16px;
+  height: 9px;
+}
+
+.link-more {
+  color: $sk-body-link-color;
+  @include flexbox;
+  gap: 5px;
+  position: relative;
+  font-weight: 600;
+  &::after {
+    content: '';
+    margin-top: 5px;
+    width: 6px;
+    height: 13px;
+    background-color: $sk-body-link-color;
+    mask-image: url(../images/icons/icon_arrow.svg);
+    mask-repeat: no-repeat;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.link-more.icon{
+  display: block;
+  &::after{
+    content: none;
+  }
+  .ic-arrow{
+    display: inline-block;
+    aspect-ratio: 1/1;
+    height: 11px;
+    background-color: $sk-body-link-color;
+    mask-image: url(../images/icons/icon_arrow.svg);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
+
+}
+.btn-film {
+  color: $sk-body-link-color;
+  @include flexbox;
+  position: relative;
+  padding-right: 25px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include resM {
+    font-size: 14px;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    aspect-ratio: 1/1;
+  }
+
+  &::before {
+    right: 1px;
+    width: 18px;
+    border: 2px solid $sk-body-link-color;
+    border-radius: 100%;
+
+    @include resM {
+      width: 14px;
+      border-width: 1px;
+    }
+  }
+
+  &::after {
+    width: 20px;
+
+    @include resM {
+      width: 16px;
+    }
+
+    background-color: $sk-body-link-color;
+    mask-image: url(../images/icons/icon_play.svg);
+    mask-repeat: no-repeat;
+  }
+}
+
+.btn-plus{
+  @include flexbox;
+  width: max-content;
+  gap: 20px;
+  color: #fff;
+  border-radius: 32px;
+  height: 56px;
+  background: rgba(66,66,69,0.7);
+  backdrop-filter: blur(7px);
+  padding: 0 15px 0 20px;
+  font-size: 17px;
+  font-weight: 600;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 50px;
+  scale: 0;
+  transform-origin: left;
+  transition: scale 0.3s cubic-bezier(0.6, 0.08, 0.67, 1.14);
+  z-index: 5;
+  &.on{
+    scale: 1;
+  }
+  &::after{
+    content: '';
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: rgb(0,113,227);
+    background-image: url(../images/icons/icon_plus.svg);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}

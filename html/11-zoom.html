@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../asset/css/style.css" />
+	<!-- swiper -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<style>
+		.sc-zoom {
+			margin-top: 100vh;
+		}
+	</style>
+</head>
+
+<body>
+	<section class="sc-zoom">
+		<h2 class="blind">camera zoom</h2>
+		<div class="group-zoom">
+			<div class="zoom-area">
+				<div class="sticky-container">
+					<div class="sticky">
+						<h3 class="headline">
+							New 48MP<br>Ultra Wide camera.<br>
+							Viva la resolution.
+						</h3>
+						<div class="bg-wrap">
+							<img src="../asset/images/hw-frame.png" alt class="frame">
+							<img src="../asset/images/hero_camera.jpg" alt class="item">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="viewport-content typo-wrap">
+				<div class="typography-area">
+					<p class="typography">
+						iPhone 16 Pro adds a second 48MP camera to the Pro camera system. The new 48MP Ultra Wide camera has a
+						more
+						advanced quad-pixel sensor for super-high-resolution 48MP ProRAW and HEIF photos with autofocus.
+					</p>
+					<p class="typography">
+						So you can <strong>capture a mesmerizing new level of detail</strong> in macro photos and sweeping,
+						wide-angle shots.
+					</p>
+				</div>
+				<div class="gallery-area">
+					<div class="zoom-swiper swiper">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide">
+								<figure>
+									<div class="thumb">
+										<img src="../asset/images/zoom/01-macro.jpg" alt>
+									</div>
+									<figcaption>
+										<strong>0.5x</strong> Macro
+									</figcaption>
+								</figure>
+							</li>
+							<li class="swiper-slide">
+								<figure>
+									<div class="thumb">
+										<img src="../asset/images/zoom/02-13mm.jpg" alt>
+									</div>
+									<figcaption>
+										<strong>0.5x</strong> Ultra Wide
+									</figcaption>
+								</figure>
+							</li>
+							<li class="swiper-slide">
+								<figure>
+									<div class="thumb">
+										<img src="../asset/images/zoom/03-24mm.jpg" alt>
+									</div>
+									<figcaption>
+										<strong>1x</strong> Fusion 24 mm
+									</figcaption>
+								</figure>
+							</li>
+							<li class="swiper-slide">
+								<figure>
+									<div class="thumb">
+										<img src="../asset/images/zoom/04-28mm.jpg" alt>
+									</div>
+									<figcaption>
+										<strong>1.2x</strong> Fusion 28 mm
+									</figcaption>
+								</figure>
+							</li>
+							<li class="swiper-slide">
+								<figure>
+									<div class="thumb">
+										<img src="../asset/images/zoom/05-35mm.jpg" alt>
+									</div>
+									<figcaption>
+										<strong>1.5x</strong> Fusion 35 mm
+									</figcaption>
+								</figure>
+							</li>
+							<li class="swiper-slide">
+								<figure>
+									<div class="thumb">
+										<img src="../asset/images/zoom/06-48mm.jpg" alt>
+									</div>
+									<figcaption>
+										<strong>2x</strong> Telephoto
+									</figcaption>
+								</figure>
+							</li>
+							<li class="swiper-slide">
+								<figure>
+									<div class="thumb">
+										<img src="../asset/images/zoom/07-120mm.jpg" alt>
+									</div>
+									<figcaption>
+										<strong>5x</strong> Telephoto
+									</figcaption>
+								</figure>
+							</li>
+						</ul>
+
+					</div>
+					<div class="zoom-swiper__container">
+						<div class="zoom-swiper2 swiper">
+							<ol class="zoom-list swiper-wrapper">
+								<li class="zoom-item swiper-slide active"><button>Macro</button></li>
+								<li class="zoom-item swiper-slide"><button>13 mm</button></li>
+								<li class="zoom-item swiper-slide"><button>24 mm</button></li>
+								<li class="zoom-item swiper-slide"><button>28 mm</button></li>
+								<li class="zoom-item swiper-slide"><button>35 mm</button></li>
+								<li class="zoom-item swiper-slide"><button>46 mm</button></li>
+								<li class="zoom-item swiper-slide"><button>120 mm</button></li>
+							</ol>
+							<span class="curr"></span>/
+							<button class="swiper-button-prev"></button>
+							<button class="swiper-button-next"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="viewport-content media-wrap">
+				<div class="typography-area">
+					<p class="typography">
+						More zoom? Boom. Now you can shoot in 120 mm with the 5x Telephoto camera on both Pro models and get
+						<strong>sharper close-ups from farther away</strong>. With multiple framing options, it’s like having
+						seven pro lenses in your pocket, everywhere you go.
+					</p>
+				</div>
+				<div class="video-area">
+					<video src="../asset/video/lens.mp4" muted autoplay></video>
+				</div>
+			</div>
+		</div>
+		<button class="btn-plus">
+			Zoom in on 5x Telephoto
+		</button>
+	</section>
+
+	<script>
+		const zoomSwiper1 = new Swiper('.zoom-swiper', {
+			effect: 'fade',
+			allowTouchMove: false,
+			fadeEffect: {
+				crossFade: true,//슬라이드 간 교차
+			},
+			grabCursor: false,
+		})
+		const zoomSwiper2 = new Swiper('.zoom-swiper2', {
+			slidesPerView: 'auto',
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+		})
+$('.zoom-swiper2 .zoom-item').click(function (e) {
+    e.preventDefault();
+    const index = $(this).index();
+    console.log(index);
+    $(this).addClass('active').siblings().removeClass('active');
+    updateCurrPosition(index); // curr 위치 업데이트
+    zoomSwiper1.slideTo(index);
+    zoomSwiper2.slideTo(index);
+});
+
+// next 버튼 클릭 시 active 클래스와 슬라이드 인덱스 동기화, curr 위치 업데이트
+$('.zoom-swiper2 .swiper-button-next').click(function () {
+    let currentIndex = zoomSwiper1.realIndex; // 현재 슬라이드 인덱스
+    currentIndex = (currentIndex + 1) % zoomSwiper1.slides.length; // 슬라이드 갯수 넘어서지 않게 처리
+    updateZoomItem(currentIndex); // active 클래스 업데이트
+    updateCurrPosition(currentIndex); // curr 위치 업데이트
+    zoomSwiper1.slideTo(currentIndex);
+    zoomSwiper2.slideTo(currentIndex);
+});
+
+// prev 버튼 클릭 시 active 클래스와 슬라이드 인덱스 동기화, curr 위치 업데이트
+$('.zoom-swiper2 .swiper-button-prev').click(function () {
+    let currentIndex = zoomSwiper1.realIndex; // 현재 슬라이드 인덱스
+    currentIndex = (currentIndex - 1 + zoomSwiper1.slides.length) % zoomSwiper1.slides.length; // 음수 인덱스 처리
+    updateZoomItem(currentIndex); // active 클래스 업데이트
+    updateCurrPosition(currentIndex); // curr 위치 업데이트
+    zoomSwiper1.slideTo(currentIndex);
+    zoomSwiper2.slideTo(currentIndex);
+});
+
+// active 클래스를 업데이트하는 함수
+function updateZoomItem(index) {
+    $('.zoom-swiper2 .zoom-item').eq(index).addClass('active').siblings().removeClass('active');
+}
+
+// curr 요소의 위치를 업데이트하는 함수
+function updateCurrPosition(index) {
+    // .zoom-item의 offset을 사용하여 상대적인 위치를 정확하게 계산
+    const item = $('.zoom-swiper2 .zoom-item').eq(index);
+    const leftVal = item.offset().left - $('.zoom-swiper2').offset().left; // 부모 요소를 기준으로 상대적 계산
+    const itemWidth = item.outerWidth(); // 각 .zoom-item의 너비
+    const padding = 3; // 필요한 추가 여백
+
+    $('.zoom-swiper2 .curr').css({
+        left: leftVal + padding,
+        width: itemWidth // curr의 너비도 .zoom-item에 맞추기
+    });
+}
+
+		const zoomCover = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".zoom-area",
+				start: "top top",
+				end: "bottom bottom",
+				markers: false,
+				scrub: 1,
+				invalidateOnRefresh: true,
+			},
+		});
+
+		zoomCover
+			.to(".zoom-area .bg-wrap", {
+				"--opacity": 0,
+			})
+			.to(
+				".zoom-area .headline",
+				{
+					yPercent: -200,
+					autoAlpha: 0,
+				},
+				"<"
+			)
+			.to(".zoom-area .bg-wrap", {
+				scale: 1,
+				marginLeft: 0,
+			});
+	</script>
+</body>
+
+</html>
